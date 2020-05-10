@@ -34,29 +34,6 @@ Depthset Part5 –
 https://drive.google.com/drive/folders/1o8BsQynEXUu4XpdexLtz2JPaqtDyLmXy
 
 
-Dataset Statistics:
-1.	Kind of Images:
-      a.	Foreground (Fg) Images: 100 PNG Images of size less than 148*148.
-      b.	Background (Bg) Images: 100 JPEG Images of size 224*224
-      c.	Fg_Bg Images: 100*(20*5)*40 JPEG = 400, 000 Images
-      Note: (20*5 is Fg images are taken 20 as a set and 5 such sets)
-      Foreground Images are Randomly placed in 20 positions on Background and then they are flipped) 
-      d.	Masks Images:  100*(20*5)*40 JPEG = 400, 000 Images
-      e.	Depth Images: 400,000 Images JPEG
-
-2.	Total Images of Each Kind
-      a.	Foreground (Fg) Images: 	    100 
-      b.	Background (Bg) Images: 	    100 
-      c.	Fg_Bg Images:             		400,000 
-      d.	Masks Images:  			          400,000
-      e.	Depth Images: 			          400,000 
-
-3.	Total Size of the Dataset: 		      400000 + 400000
-4.	Mean and Standard Deviation Values of Fg_Bg and Masks:
-      a.	Mean: ['0.306218862533569','0.287717372179031', 0.269325882196426']
-      b.	Standard Deviation: ['0.214562639594078', '0.213071450591087', '0.213857620954514']
-
-
 Dataset Components
 1.	Background Images:
    <img src = "Dataset_Images/Background_Images.jpg">
