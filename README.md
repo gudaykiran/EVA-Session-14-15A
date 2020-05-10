@@ -209,7 +209,7 @@ for i in range((240000-236800)//div): <br>
 
    inputs = load_images(path ="/content/OverlayDir_Sample/BgFg/", start=num,end = num+div ) <br>
    print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[1:])) <br>
-**# Compute results <br> **
+**# Compute results <br>**
 
    outputs = predict(model, inputs) <br>
 **# Display results <br>**
