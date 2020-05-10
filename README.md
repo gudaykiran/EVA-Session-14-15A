@@ -46,6 +46,22 @@ Dataset Components
    <img src = "Dataset_Images/Fg_Bg_Masks.jpg">
 5.	Depth Images:
    <img src = "Dataset_Images/Depth_Images.jpg">
+
+
+
+Dataset Statistics:
+1.	Kind of Images: <br>
+a.	Foreground (Fg) Images: 100 PNG Images of size less than 148*148. <br>
+b.	Background (Bg) Images: 100 JPEG Images of size 224*224 <br>
+c.	Fg_Bg Images: 100*(20*5)*40 JPEG = 400, 000 Images <br>
+Note: (20*5 is Fg images are taken 20 as a set and 5 such sets) <br>
+Foreground Images are Randomly placed in 20 positions on Background and then they are flipped) <br>
+d.	Masks Images:  100*(20*5)*40 JPEG = 400, 000 Images <br>
+e.	Depth Images: 400,000 Images JPEG <br>
+
+
+
+
 Dataset Creation:
 How were Foreground (fg) created with Transparency?
 Using the GIMP Tool, the foreground (fg) images were generated. The process is listed below:
