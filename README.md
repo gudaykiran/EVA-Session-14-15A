@@ -73,28 +73,29 @@ Dataset Statistics:
 
 
 
-Dataset Creation:
-How were Foreground (fg) created with Transparency?
-Using the GIMP Tool, the foreground (fg) images were generated. The process is listed below:
-    1.	Open the image
-    2.	Add the Transparency Layer i.e., Alpha Channel on it
-    3.	Using the Free Select Tool, Select the Image Portion (for which transparent image has to be created)
-    4.	Then Select Invert
-    5.	Using the Edit Toolbar – clear the Background
-    6.	Reset the size of image to the require size using Scale Image
-    7.	Export the Image to PNG format (which has 4 channels – along with 3 channels RGB, it has additional Alpha Channel). The alpha channel allows for transparency in an image. Not all image formats support it, but PNG is one of the most commonly used image formats that does.
-How were masks created for Foreground (fg) Images?
-While generating the transparent foreground images, we can also create the mask for that foreground image. The process is listed below:
-    1.	Open the image
-    2.	Add the Transparency Layer i.e., Alpha Channel on it
-    3.	Using the Free Select Tool, Select the Image Portion (for which transparent image has to be created)
-    4.	Then Select Invert
-    5.	Using the Edit Toolbar – clear the Background
-    6.	Reset the size of image to the require size using Scale Image
-    7.	Edit – Fill the background of the image with Black Color 
-    8.	Then Select Invert
-    9.	Edit – Fill the foreground of the image with white Color 
-    10.	Export the Image to PNG format  
+Dataset Creation: <br>
+How were Foreground (fg) created with Transparency? <br>
+Using the GIMP Tool, the foreground (fg) images were generated. The process is listed below: <br>
+   1.	Open the image <br>
+   2.	Add the Transparency Layer i.e., Alpha Channel on it <br>
+   3.	Using the Free Select Tool, Select the Image Portion (for which transparent image has to be created) <br>
+   4.	Then Select Invert <br>
+   5.	Using the Edit Toolbar – clear the Background <br>
+   6.	Reset the size of image to the require size using Scale Image <br>
+   7.	Export the Image to PNG format (which has 4 channels – along with 3 channels RGB, it has additional Alpha Channel). The alpha channel allows for transparency in an image. Not all image formats support it, but PNG is one of the most commonly used image formats that does. <br>
+How were masks created for Foreground (fg) Images? <br>
+While generating the transparent foreground images, we can also create the mask for that foreground image. The process is listed below: <br>
+   1.	Open the image <br>
+   2.	Add the Transparency Layer i.e., Alpha Channel on it <br>
+   3.	Using the Free Select Tool, Select the Image Portion (for which transparent image has to be created) <br>
+   4.	Then Select Invert <br>
+   5.	Using the Edit Toolbar – clear the Background <br>
+   6.	Reset the size of image to the require size using Scale Image <br>
+   7.	Edit – Fill the background of the image with Black Color <br>
+   8.	Then Select Invert <br>
+   9.	Edit – Fill the foreground of the image with white Color <br>
+   10.	Export the Image to PNG format  <br>
+
 
 How did you overlay the fg over bg and created 20 variants?
 To create the Fg over Bg images and also the Fg over Bg mask images, we will place the fg images on top of bg images at random positions, 10 times, and do this with flipped fg images, in total we will have 
