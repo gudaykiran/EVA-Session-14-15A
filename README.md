@@ -171,7 +171,7 @@ for i in range(1,101): #1 background images – (1 – 100)
 
 5.	Saving into Corresponding Directories and Zip the files.
 
-How did you create your depth images?  <br>
+**How did you create your depth images?  <br>**
 1.	Cloned the pretrained model from link Ialhashim(shared in the canvas 15A): <br>
 https://github.com/ialhashim/DenseDepth <br>
 
