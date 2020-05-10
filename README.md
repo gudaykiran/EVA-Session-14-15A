@@ -42,22 +42,22 @@ https://drive.google.com/drive/folders/1o8BsQynEXUu4XpdexLtz2JPaqtDyLmXy <br>
 
 
 **Dataset Components**
-1.	Background Images:
+**1.	Background Images:**
    <img src = "Dataset_Images/Background_Images.jpg">
  
-2.	Foreground Images:
+**2.	Foreground Images:**
    <img src = "Dataset_Images/Foreground_Images.jpg">
-3.	Foreground Masks:
+**3.	Foreground Masks:**
    <img src = "Dataset_Images/Foreground_Mask _Images.jpg">
-4.	Fg_Bg Images:
+**4.	Fg_Bg Images:**
    <img src = "Dataset_Images/Fg_Bg_Masks.jpg">
-5.	Depth Images:
+**5.	Depth Images:**
    <img src = "Dataset_Images/Depth_Images.jpg">
 
 
 
 **Dataset Statistics:**
-1.	Kind of Images: <br>
+**1.	Kind of Images: <br>**
    a.	Foreground (Fg) Images: 100 PNG Images of size less than 148*148. <br>
    b.	Background (Bg) Images: 100 JPEG Images of size 224*224 <br>
    c.	Fg_Bg Images: 100*(20*5)*40 JPEG = 400, 000 Images <br>
@@ -66,22 +66,21 @@ https://drive.google.com/drive/folders/1o8BsQynEXUu4XpdexLtz2JPaqtDyLmXy <br>
    d.	Masks Images:  100*(20*5)*40 JPEG = 400, 000 Images <br>
    e.	Depth Images: 400,000 Images JPEG <br>
 
-2.	Total Images of Each Kind
+**2.	Total Images of Each Kind**
    a.	Foreground (Fg) Images: 		  100 <br>
    b.	Background (Bg) Images: 		  100 <br>
    c.	Fg_Bg Images:             		400,000 <br>
    d.	Masks Images:  			          400,000 <br>
    e.	Depth Images: 			           400,000 <br>
 
-3.	Total Size of the Dataset: 		400000 + 400000 <br>
-4.	Mean and Standard Deviation Values of Fg-Bg and Masks: <br>
+**3.	Total Size of the Dataset:**  		400000 + 400000 <br>
+**4.	Mean and Standard Deviation Values of Fg-Bg and Masks: ** <br>
    a.	Mean: ['0.306218862533569','0.287717372179031', 0.269325882196426'] <br>
    b.	Standard Deviation: ['0.214562639594078', '0.213071450591087', '0.213857620954514'] <br>
 
 
 
-**Dataset Creation:** <br>
-
+**Dataset Creation:** 
 **How were Foreground (fg) created with Transparency? ** <br>
 
 Using the GIMP Tool, the foreground (fg) images were generated. The process is listed below: <br>
