@@ -51,13 +51,13 @@ Dataset Components
 
 Dataset Statistics:
 1.	Kind of Images: <br>
-a.	Foreground (Fg) Images: 100 PNG Images of size less than 148*148. <br>
-b.	Background (Bg) Images: 100 JPEG Images of size 224*224 <br>
-c.	Fg_Bg Images: 100*(20*5)*40 JPEG = 400, 000 Images <br>
-Note: (20*5 is Fg images are taken 20 as a set and 5 such sets) <br>
-Foreground Images are Randomly placed in 20 positions on Background and then they are flipped) <br>
-d.	Masks Images:  100*(20*5)*40 JPEG = 400, 000 Images <br>
-e.	Depth Images: 400,000 Images JPEG <br>
+   a.	Foreground (Fg) Images: 100 PNG Images of size less than 148*148. <br>
+   b.	Background (Bg) Images: 100 JPEG Images of size 224*224 <br>
+   c.	Fg_Bg Images: 100*(20*5)*40 JPEG = 400, 000 Images <br>
+   Note: (20*5 is Fg images are taken 20 as a set and 5 such sets) <br>
+   Foreground Images are Randomly placed in 20 positions on Background and then they are flipped) <br>
+   d.	Masks Images:  100*(20*5)*40 JPEG = 400, 000 Images <br>
+   e.	Depth Images: 400,000 Images JPEG <br>
 
 
 
