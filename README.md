@@ -82,7 +82,7 @@ https://drive.google.com/drive/folders/1o8BsQynEXUu4XpdexLtz2JPaqtDyLmXy <br>
 
 **Dataset Creation:** 
 
-**How were Foreground (fg) created with Transparency? **<br>
+**How were Foreground (fg) created with Transparency? <br>**
 
 Using the GIMP Tool, the foreground (fg) images were generated. The process is listed below: <br>
    1.	Open the image <br>
@@ -94,7 +94,7 @@ Using the GIMP Tool, the foreground (fg) images were generated. The process is l
    7.	Export the Image to PNG format (which has 4 channels – along with 3 channels RGB, it has additional Alpha Channel). The alpha channel allows for transparency in an image. Not all image formats support it, but PNG is one of the most commonly used image formats that does. <br>
 
 
-**How were masks created for Foreground (fg) Images? ** <br>
+**How were masks created for Foreground (fg) Images? <br>**
 
 While generating the transparent foreground images, we can also create the mask for that foreground image. The process is listed below: <br>
    1.	Open the image <br>
