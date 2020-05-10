@@ -3,35 +3,42 @@
 **Dataset Link:**
 
 **Datasets:**
-**Complete Dataset:**
-https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq
-**Dataset 1_80K: **
-https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq
+**Complete Dataset:** <br>
 
-**Dataset 80K_160K:** https://drive.google.com/drive/folders/1WAfa6rctCX6lAG_XXgXyBF8uAXlD6cJw
+https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq <br>
 
-**Dataset 160K_240K:** https://drive.google.com/drive/folders/1WAfa6rctCX6lAG_XXgXyBF8uAXlD6cJw
+**Dataset 1_80K: ** <br>
 
-**Dataset 240K_320K:** 
-https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq
+https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq <br>
 
-**Dataset 320K_400K:** 
-https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq
+**Dataset 80K_160K:** <br>
+https://drive.google.com/drive/folders/1WAfa6rctCX6lAG_XXgXyBF8uAXlD6cJw <br>
 
-**Depth:**
-**Depthset Part1:**
- https://drive.google.com/drive/folders/1d_X6jRnQ7vC-CpaM1J0UFbv6I2_ZTTyN
+**Dataset 160K_240K:** <br>
+https://drive.google.com/drive/folders/1WAfa6rctCX6lAG_XXgXyBF8uAXlD6cJw <br>
 
-**Depthset Part2:** https://drive.google.com/drive/folders/1ooDlcLX7CwpDYVOyW9Abw8hX_70vvfvO
+**Dataset 240K_320K:** <br>
+https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq <br>
 
-**Depthset Part3:** https://drive.google.com/drive/folders/1CroRGYI7FUJt7Lp9jRutNj9vhgi70f-I
+**Dataset 320K_400K:** <br>
+https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq <br>
+
+**Depth:** <br>
+**Depthset Part1:** <br>
+ https://drive.google.com/drive/folders/1d_X6jRnQ7vC-CpaM1J0UFbv6I2_ZTTyN <br>
+
+**Depthset Part2:** <br>
+https://drive.google.com/drive/folders/1ooDlcLX7CwpDYVOyW9Abw8hX_70vvfvO <br>
+
+**Depthset Part3:** <br>
+https://drive.google.com/drive/folders/1CroRGYI7FUJt7Lp9jRutNj9vhgi70f-I <br>
 
 
-**Depthset Part4:**
-https://drive.google.com/drive/folders/1TsOKE4meT-oV2yb1CSsd12lUUCkOGl9j
+**Depthset Part4:** <br>
+https://drive.google.com/drive/folders/1TsOKE4meT-oV2yb1CSsd12lUUCkOGl9j <br>
 
-**Depthset Part5:** 
-https://drive.google.com/drive/folders/1o8BsQynEXUu4XpdexLtz2JPaqtDyLmXy
+**Depthset Part5:** <br>
+https://drive.google.com/drive/folders/1o8BsQynEXUu4XpdexLtz2JPaqtDyLmXy <br>
 
 
 **Dataset Components**
@@ -74,7 +81,9 @@ https://drive.google.com/drive/folders/1o8BsQynEXUu4XpdexLtz2JPaqtDyLmXy
 
 
 **Dataset Creation:** <br>
+
 **How were Foreground (fg) created with Transparency? ** <br>
+
 Using the GIMP Tool, the foreground (fg) images were generated. The process is listed below: <br>
    1.	Open the image <br>
    2.	Add the Transparency Layer i.e., Alpha Channel on it <br>
@@ -86,6 +95,7 @@ Using the GIMP Tool, the foreground (fg) images were generated. The process is l
 
 
 **How were masks created for Foreground (fg) Images? ** <br>
+
 While generating the transparent foreground images, we can also create the mask for that foreground image. The process is listed below: <br>
    1.	Open the image <br>
    2.	Add the Transparency Layer i.e., Alpha Channel on it <br>
@@ -99,7 +109,8 @@ While generating the transparent foreground images, we can also create the mask 
    10.	Export the Image to PNG format  <br>
 
 
-How did you overlay the fg over bg and created 20 variants? <br>
+**How did you overlay the fg over bg and created 20 variants? <br>**
+
 To create the Fg over Bg images and also the Fg over Bg mask images, we will place the fg images on top of bg images at random positions, 10 times, and do this with flipped fg images, in total we will have <br>
 
 (100) BG x (100) FG x flip 2 times (2*20(Randomly placed 10 images plus flips)) = 100 * 100 * 40 = 400,000 images <br>
@@ -167,40 +178,41 @@ https://github.com/ialhashim/DenseDepth <br>
 2.	We get modules from the pretrained model and run here in colab. <br>
 Modules : <br>
 
-a.	From Keras / Tensor Flow loading the model “nyu.h5”. <br>
-b.	From Layers importing Bilinearsamplingup 2D <br>
-c.	Load Images <br>
-d.	Save Images <br>
-e.	Predict function to do predictions. <br>
+   a.	From Keras / Tensor Flow loading the model “nyu.h5”. <br>
+   b.	From Layers importing Bilinearsamplingup 2D <br>
+   c.	Load Images <br>
+   d.	Save Images <br>
+   e.	Predict function to do predictions. <br>
 
 
-# Keras / TensorFlow
+**#Keras / TensorFlow**
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5' <br>
 from keras.models import load_model <br>
 from layers import BilinearUpSampling2D <br>
 #from utils import predict, load_images, display_images <br>
 from matplotlib import pyplot as plt <br>
 
-# Custom object needed for inference and training <br>
+**#Custom object needed for inference and training <br>**
 custom_objects = {'BilinearUpSampling2D': BilinearUpSampling2D, 'depth_loss_function': None} <br>
 
 print('Loading model...')
 
-# Load model into GPU / CPU
+**# Load model into GPU / CPU** <br>
 model = load_model('nyu.h5', custom_objects=custom_objects, compile=False)
 
 print('\nModel loaded ({0}).'.format("nyu.h5"))
 
-# Input images
+**# Input images**
 div = 200
 num = 236801 #Generating sets of images (3200) batchwise(Batch 3)
 for i in range((240000-236800)//div): 
 
    inputs = load_images(path ="/content/OverlayDir_Sample/BgFg/", start=num,end = num+div )
    print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[1:]))
-# Compute results
+**# Compute results**
   outputs = predict(model, inputs)
-# Display results
+**# Display results**
   display_images(outputs.copy(), inputs.copy(), start = num)
            num+=div
 
@@ -209,7 +221,8 @@ print("done")
 
 3.	Zipping the Depth files into a separate directory inside DepthModel.
 
-Colab Links:
+**Colab Links:**
+
   1.	Dataset(pynb):https://colab.research.google.com/drive/1gVyUY93azAIvZVuts5Pm1J1WG76rYgoA <br>
   2.	Statistics File (pynb): https://colab.research.google.com/drive/1hCZLKH8f-dheNitM7nw_qz6n605N3KGY#scrollTo=PUnyrvrum-b3 <br>
   3.	Depth Creation (pynb) : https://colab.research.google.com/drive/1BvpvWvAAWcUBBtRws20h5am1DiLQsTG3 <br>
