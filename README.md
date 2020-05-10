@@ -176,17 +176,16 @@ for i in range(1,101): #1 background images – (1 – 100)
 https://github.com/ialhashim/DenseDepth <br>
 
 2.	We get modules from the pretrained model and run here in colab. <br>
-Modules : <br>
+   Modules : <br>
 
-   a.	From Keras / Tensor Flow loading the model “nyu.h5”. <br>
-   b.	From Layers importing Bilinearsamplingup 2D <br>
-   c.	Load Images <br>
-   d.	Save Images <br>
-   e.	Predict function to do predictions. <br>
+    a.	From Keras / Tensor Flow loading the model “nyu.h5”. <br>
+    b.	From Layers importing Bilinearsamplingup 2D <br>
+    c.	Load Images <br>
+    d.	Save Images <br>
+    e.	Predict function to do predictions. <br>
 
 
 **#Keras / TensorFlow**
-
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5' <br>
 from keras.models import load_model <br>
 from layers import BilinearUpSampling2D <br>
@@ -196,20 +195,20 @@ from matplotlib import pyplot as plt <br>
 **#Custom object needed for inference and training <br>**
 custom_objects = {'BilinearUpSampling2D': BilinearUpSampling2D, 'depth_loss_function': None} <br>
 
-print('Loading model...')
+print('Loading model...') <br>
 
 **# Load model into GPU / CPU** <br>
-model = load_model('nyu.h5', custom_objects=custom_objects, compile=False)
-
-print('\nModel loaded ({0}).'.format("nyu.h5"))
+model = load_model('nyu.h5', custom_objects=custom_objects, compile=False) <br>
+ 
+print('\nModel loaded ({0}).'.format("nyu.h5")) <br>
 
 **# Input images**
-div = 200
-num = 236801 #Generating sets of images (3200) batchwise(Batch 3)
-for i in range((240000-236800)//div): 
+div = 200 <br>
+num = 236801 #Generating sets of images (3200) batchwise(Batch 3) <br>
+for i in range((240000-236800)//div): <br>
 
-   inputs = load_images(path ="/content/OverlayDir_Sample/BgFg/", start=num,end = num+div )
-   print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[1:]))
+   inputs = load_images(path ="/content/OverlayDir_Sample/BgFg/", start=num,end = num+div ) <br>
+   print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[1:])) <br>
 **# Compute results**
   outputs = predict(model, inputs)
 **# Display results**
