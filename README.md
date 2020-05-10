@@ -101,23 +101,25 @@ While generating the transparent foreground images, we can also create the mask 
 
 How did you overlay the fg over bg and created 20 variants? <br>
 To create the Fg over Bg images and also the Fg over Bg mask images, we will place the fg images on top of bg images at random positions, 10 times, and do this with flipped fg images, in total we will have <br>
+
 (100) BG x (100) FG x flip 2 times (2*20(Randomly placed 10 images plus flips)) = 100 * 100 * 40 = 400,000 images <br>
 BgFg + BgFg Masks =  400,000 + 400,000 = 800,000 <br>
+
 Implementation Part: <br>
-1.	Creating a directory.
-!mkdir OverlayDir
+1.	Creating a directory. <br>
+!mkdir OverlayDir <br>
 
-2.	Creating subdirectories for BgFg and Masks for it.
-%cd OverlayDir
-!mkdir BgFg
-!mkdir BgFgMask
+2.	Creating subdirectories for BgFg and Masks for it. <br>
+%cd OverlayDir <br>
+!mkdir BgFg <br>
+!mkdir BgFgMask <br>
 
-3.	Keeping Foreground and flips randomly on Background.
-4.	Keeping Foreground masks and flips of masks randomly on Background.
+3.	Keeping Foreground and flips randomly on Background. <br>
+4.	Keeping Foreground masks and flips of masks randomly on Background. <br>
 
-path = '/content/gdrive/My Drive/EVA4/fg_bg Images/'
-start1 = 1 #  Choosing numbers of images to be generated
-black = np.zeros((224,224))
+path = '/content/gdrive/My Drive/EVA4/fg_bg Images/' <br>
+start1 = 1 #  Choosing numbers of images to be generated <br>
+black = np.zeros((224,224)) <br>
 
 for i in range(1,101): #1 background images – (1 – 100)
 
@@ -139,7 +141,7 @@ for i in range(1,101): #1 background images – (1 – 100)
 
            flipfg = fg1.transpose(PIL.Image.FLIP_LEFT_RIGHT) #flip image
            flipmask = m1.transpose(PIL.Image.FLIP_LEFT_RIGHT) #flip mask
-bg1.paste(fg1,(r1,r2),fg1)
+         bg1.paste(fg1,(r1,r2),fg1)
         	bg2.paste(flipfg,(r1,r2),flipfg)
 
         	black_img1.paste(m1,(r1,r2), m1)
