@@ -99,7 +99,7 @@ While generating the transparent foreground images, we can also create the mask 
    10.	Export the Image to PNG format  <br>
 
 
-How did you overlay the fg over bg and created 20 variants?
+How did you overlay the fg over bg and created 20 variants? <br>
 To create the Fg over Bg images and also the Fg over Bg mask images, we will place the fg images on top of bg images at random positions, 10 times, and do this with flipped fg images, in total we will have <br>
 (100) BG x (100) FG x flip 2 times (2*20(Randomly placed 10 images plus flips)) = 100 * 100 * 40 = 400,000 images <br>
 BgFg + BgFg Masks =  400,000 + 400,000 = 800,000 <br>
