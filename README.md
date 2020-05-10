@@ -100,114 +100,114 @@ While generating the transparent foreground images, we can also create the mask 
 
 
 How did you overlay the fg over bg and created 20 variants?
-To create the Fg over Bg images and also the Fg over Bg mask images, we will place the fg images on top of bg images at random positions, 10 times, and do this with flipped fg images, in total we will have 
-(100) BG x (100) FG x flip 2 times (2*20(Randomly placed 10 images plus flips)) = 100 * 100 * 40 = 400,000 images
-BgFg + BgFg Masks =  400,000 + 400,000 = 800,000
-Implementation Part:
-    1.	Creating a directory.
-    !mkdir OverlayDir
+To create the Fg over Bg images and also the Fg over Bg mask images, we will place the fg images on top of bg images at random positions, 10 times, and do this with flipped fg images, in total we will have <br>
+(100) BG x (100) FG x flip 2 times (2*20(Randomly placed 10 images plus flips)) = 100 * 100 * 40 = 400,000 images <br>
+BgFg + BgFg Masks =  400,000 + 400,000 = 800,000 <br>
+Implementation Part: <br>
+1.	Creating a directory.
+!mkdir OverlayDir
 
-    2.	Creating subdirectories for BgFg and Masks for it.
-    %cd OverlayDir
-    !mkdir BgFg
-    !mkdir BgFgMask
+2.	Creating subdirectories for BgFg and Masks for it.
+%cd OverlayDir
+!mkdir BgFg
+!mkdir BgFgMask
 
-    3.	Keeping Foreground and flips randomly on Background.
-    4.	Keeping Foreground masks and flips of masks randomly on Background.
+3.	Keeping Foreground and flips randomly on Background.
+4.	Keeping Foreground masks and flips of masks randomly on Background.
 
-    path = '/content/gdrive/My Drive/EVA4/fg_bg Images/'
-    start1 = 1 #  Choosing numbers of images to be generated
-    black = np.zeros((224,224))
+path = '/content/gdrive/My Drive/EVA4/fg_bg Images/'
+start1 = 1 #  Choosing numbers of images to be generated
+black = np.zeros((224,224))
 
-    for i in range(1,101): #1 background images – (1 – 100)
+for i in range(1,101): #1 background images – (1 – 100)
 
-            bg = Image.open(f'{path}/BackgroundMall/bg{str(i)}.jpg')
+    	  bg = Image.open(f'{path}/BackgroundMall/bg{str(i)}.jpg')
 
-            for j in  range(1,21): #1 foreground image and masks - (1 – 20)
-              fg = Image.open(f'{path}/ForegroundPerson/fg{str(j)}.png')
-              mask = Image.open(f'{path}/Mask/m{str(j)}.png').convert('1')
+    	  for j in  range(1,21): #1 foreground image and masks - (1 – 20)
+          fg = Image.open(f'{path}/ForegroundPerson/fg{str(j)}.png')
+          mask = Image.open(f'{path}/Mask/m{str(j)}.png').convert('1')
 
-            for k in range(1,21): # Placing flips (1 – 20)
-                 r1 = random.randint(1, 120)
-                 r2 = random.randint(1, 120)
-                 bg1 = copy.deepcopy(bg)
-                 bg2 = copy.deepcopy(bg)
-                 fg1 = copy.deepcopy(fg)
-                 m1 = copy.deepcopy(mask)
-                 black_img1 = Image.fromarray(black,mode='1')
-               black_img2 = Image.fromarray(black,mode='1')
+      	for k in range(1,21): # Placing flips (1 – 20)
+             r1 = random.randint(1, 120)
+             r2 = random.randint(1, 120)
+             bg1 = copy.deepcopy(bg)
+             bg2 = copy.deepcopy(bg)
+             fg1 = copy.deepcopy(fg)
+             m1 = copy.deepcopy(mask)
+             black_img1 = Image.fromarray(black,mode='1')
+           black_img2 = Image.fromarray(black,mode='1')
 
-               flipfg = fg1.transpose(PIL.Image.FLIP_LEFT_RIGHT) #flip image
-               flipmask = m1.transpose(PIL.Image.FLIP_LEFT_RIGHT) #flip mask
-    bg1.paste(fg1,(r1,r2),fg1)
-              bg2.paste(flipfg,(r1,r2),flipfg)
+           flipfg = fg1.transpose(PIL.Image.FLIP_LEFT_RIGHT) #flip image
+           flipmask = m1.transpose(PIL.Image.FLIP_LEFT_RIGHT) #flip mask
+bg1.paste(fg1,(r1,r2),fg1)
+        	bg2.paste(flipfg,(r1,r2),flipfg)
 
-              black_img1.paste(m1,(r1,r2), m1)
+        	black_img1.paste(m1,(r1,r2), m1)
+        
+        	black_img2.paste(flipmask,(r1,r2), flipmask)
 
-              black_img2.paste(flipmask,(r1,r2), flipmask)
+        			 bg1.save(f"/content/OverlayDir/BgFg/bgfg{str(start1)}.jpg",optimize=True, quality=30)
+        				 black_img1.save(f"/content/OverlayDir/BgFgMask/bgfgmask{str(start1)}.jpg",optimize=True, quality=30)
 
-                   bg1.save(f"/content/OverlayDir/BgFg/bgfg{str(start1)}.jpg",optimize=True, quality=30)
-                     black_img1.save(f"/content/OverlayDir/BgFgMask/bgfgmask{str(start1)}.jpg",optimize=True, quality=30)
+        	start1+=1
+        					 bg2.save(f"/content/OverlayDir/BgFg/bgfg{str(start1)}.jpg",optimize=True, quality=30)
+        			 black_img2.save(f"/content/OverlayDir/BgFgMask/bgfgmask{str(start1)}.jpg",optimize=True, quality=30)
 
-              start1+=1
-                       bg2.save(f"/content/OverlayDir/BgFg/bgfg{str(start1)}.jpg",optimize=True, quality=30)
-                   black_img2.save(f"/content/OverlayDir/BgFgMask/bgfgmask{str(start1)}.jpg",optimize=True, quality=30)
+        start1+=1
+        print(start1)
 
-            start1+=1
-            print(start1)
+5.	Saving into Corresponding Directories and Zip the files.
 
-    5.	Saving into Corresponding Directories and Zip the files.
+How did you create your depth images?  <br>
+1.	Cloned the pretrained model from link Ialhashim(shared in the canvas 15A): <br>
+https://github.com/ialhashim/DenseDepth <br>
 
-How did you create your depth images? 
-    1.	Cloned the pretrained model from link Ialhashim(shared in the canvas 15A):
-    https://github.com/ialhashim/DenseDepth
+2.	We get modules from the pretrained model and run here in colab. 
+Modules : 
 
-    2.	We get modules from the pretrained model and run here in colab.
-    Modules : 
-
-    a.	From Keras / Tensor Flow loading the model “nyu.h5”.
-    b.	From Layers importing Bilinearsamplingup 2D
-    c.	Load Images
-    d.	Save Images
-    e.	Predict function to do predictions.
-
-
-    # Keras / TensorFlow
-    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5'
-    from keras.models import load_model
-    from layers import BilinearUpSampling2D
-    #from utils import predict, load_images, display_images
-    from matplotlib import pyplot as plt
-
-    # Custom object needed for inference and training
-    custom_objects = {'BilinearUpSampling2D': BilinearUpSampling2D, 'depth_loss_function': None}
-
-    print('Loading model...')
-
-    # Load model into GPU / CPU
-    model = load_model('nyu.h5', custom_objects=custom_objects, compile=False)
-
-    print('\nModel loaded ({0}).'.format("nyu.h5"))
-
-    # Input images
-    div = 200
-    num = 236801 #Generating sets of images (3200) batchwise(Batch 3)
-    for i in range((240000-236800)//div): 
-
-       inputs = load_images(path ="/content/OverlayDir_Sample/BgFg/", start=num,end = num+div )
-       print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[1:]))
-    # Compute results
-      outputs = predict(model, inputs)
-    # Display results
-      display_images(outputs.copy(), inputs.copy(), start = num)
-               num+=div
-
-    print("done")
+a.	From Keras / Tensor Flow loading the model “nyu.h5”.
+b.	From Layers importing Bilinearsamplingup 2D
+c.	Load Images
+d.	Save Images
+e.	Predict function to do predictions.
 
 
-    3.	Zipping the Depth files into a separate directory inside DepthModel.
+# Keras / TensorFlow
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5'
+from keras.models import load_model
+from layers import BilinearUpSampling2D
+#from utils import predict, load_images, display_images
+from matplotlib import pyplot as plt
+
+# Custom object needed for inference and training
+custom_objects = {'BilinearUpSampling2D': BilinearUpSampling2D, 'depth_loss_function': None}
+
+print('Loading model...')
+
+# Load model into GPU / CPU
+model = load_model('nyu.h5', custom_objects=custom_objects, compile=False)
+
+print('\nModel loaded ({0}).'.format("nyu.h5"))
+
+# Input images
+div = 200
+num = 236801 #Generating sets of images (3200) batchwise(Batch 3)
+for i in range((240000-236800)//div): 
+
+   inputs = load_images(path ="/content/OverlayDir_Sample/BgFg/", start=num,end = num+div )
+   print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[1:]))
+# Compute results
+  outputs = predict(model, inputs)
+# Display results
+  display_images(outputs.copy(), inputs.copy(), start = num)
+           num+=div
+
+print("done")
+
+
+3.	Zipping the Depth files into a separate directory inside DepthModel.
 
 Colab Links:
-    1.	Dataset(pynb):https://colab.research.google.com/drive/1gVyUY93azAIvZVuts5Pm1J1WG76rYgoA
-    2.	Statistics File (pynb): https://colab.research.google.com/drive/1hCZLKH8f-dheNitM7nw_qz6n605N3KGY#scrollTo=PUnyrvrum-b3
-    3.	Depth Creation (pynb) : https://colab.research.google.com/drive/1BvpvWvAAWcUBBtRws20h5am1DiLQsTG3
+  1.	Dataset(pynb):https://colab.research.google.com/drive/1gVyUY93azAIvZVuts5Pm1J1WG76rYgoA <br>
+  2.	Statistics File (pynb): https://colab.research.google.com/drive/1hCZLKH8f-dheNitM7nw_qz6n605N3KGY#scrollTo=PUnyrvrum-b3 <br>
+  3.	Depth Creation (pynb) : https://colab.research.google.com/drive/1BvpvWvAAWcUBBtRws20h5am1DiLQsTG3 <br>
