@@ -1,40 +1,40 @@
 # EVA-Session-14-15A
 
-Dataset Link:
+**Dataset Link:**
 
-Datasets:
-Complete Dataset:
+**Datasets:**
+**Complete Dataset:**
 https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq
-Dataset 1_80K – 
-https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq
-
-Dataset 80K_160K - https://drive.google.com/drive/folders/1WAfa6rctCX6lAG_XXgXyBF8uAXlD6cJw
-
-Dataset 160K_240K - https://drive.google.com/drive/folders/1WAfa6rctCX6lAG_XXgXyBF8uAXlD6cJw
-
-Dataset 240K_320K- 
+**Dataset 1_80K: **
 https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq
 
-Dataset 320K_400K – 
+**Dataset 80K_160K:** https://drive.google.com/drive/folders/1WAfa6rctCX6lAG_XXgXyBF8uAXlD6cJw
+
+**Dataset 160K_240K:** https://drive.google.com/drive/folders/1WAfa6rctCX6lAG_XXgXyBF8uAXlD6cJw
+
+**Dataset 240K_320K:** 
 https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq
 
-Depth:
-Depthset Part1 – 
+**Dataset 320K_400K:** 
+https://drive.google.com/drive/folders/15ZgDJ-4PpYAtNZRkTRlRmXulN6UOoZZq
+
+**Depth:**
+**Depthset Part1:**
  https://drive.google.com/drive/folders/1d_X6jRnQ7vC-CpaM1J0UFbv6I2_ZTTyN
 
-Depthset Part2 - https://drive.google.com/drive/folders/1ooDlcLX7CwpDYVOyW9Abw8hX_70vvfvO
+**Depthset Part2:** https://drive.google.com/drive/folders/1ooDlcLX7CwpDYVOyW9Abw8hX_70vvfvO
 
-Depthset Part3 – https://drive.google.com/drive/folders/1CroRGYI7FUJt7Lp9jRutNj9vhgi70f-I
+**Depthset Part3:** https://drive.google.com/drive/folders/1CroRGYI7FUJt7Lp9jRutNj9vhgi70f-I
 
 
-Depthset Part4 –
+**Depthset Part4:**
 https://drive.google.com/drive/folders/1TsOKE4meT-oV2yb1CSsd12lUUCkOGl9j
 
-Depthset Part5 – 
+**Depthset Part5:** 
 https://drive.google.com/drive/folders/1o8BsQynEXUu4XpdexLtz2JPaqtDyLmXy
 
 
-Dataset Components
+**Dataset Components**
 1.	Background Images:
    <img src = "Dataset_Images/Background_Images.jpg">
  
@@ -49,7 +49,7 @@ Dataset Components
 
 
 
-Dataset Statistics:
+**Dataset Statistics:**
 1.	Kind of Images: <br>
    a.	Foreground (Fg) Images: 100 PNG Images of size less than 148*148. <br>
    b.	Background (Bg) Images: 100 JPEG Images of size 224*224 <br>
@@ -73,8 +73,8 @@ Dataset Statistics:
 
 
 
-Dataset Creation: <br>
-How were Foreground (fg) created with Transparency? <br>
+**Dataset Creation:** <br>
+**How were Foreground (fg) created with Transparency? ** <br>
 Using the GIMP Tool, the foreground (fg) images were generated. The process is listed below: <br>
    1.	Open the image <br>
    2.	Add the Transparency Layer i.e., Alpha Channel on it <br>
@@ -85,7 +85,7 @@ Using the GIMP Tool, the foreground (fg) images were generated. The process is l
    7.	Export the Image to PNG format (which has 4 channels – along with 3 channels RGB, it has additional Alpha Channel). The alpha channel allows for transparency in an image. Not all image formats support it, but PNG is one of the most commonly used image formats that does. <br>
 
 
-How were masks created for Foreground (fg) Images? <br>
+**How were masks created for Foreground (fg) Images? ** <br>
 While generating the transparent foreground images, we can also create the mask for that foreground image. The process is listed below: <br>
    1.	Open the image <br>
    2.	Add the Transparency Layer i.e., Alpha Channel on it <br>
@@ -164,25 +164,25 @@ How did you create your depth images?  <br>
 1.	Cloned the pretrained model from link Ialhashim(shared in the canvas 15A): <br>
 https://github.com/ialhashim/DenseDepth <br>
 
-2.	We get modules from the pretrained model and run here in colab. 
-Modules : 
+2.	We get modules from the pretrained model and run here in colab. <br>
+Modules : <br>
 
-a.	From Keras / Tensor Flow loading the model “nyu.h5”.
-b.	From Layers importing Bilinearsamplingup 2D
-c.	Load Images
-d.	Save Images
-e.	Predict function to do predictions.
+a.	From Keras / Tensor Flow loading the model “nyu.h5”. <br>
+b.	From Layers importing Bilinearsamplingup 2D <br>
+c.	Load Images <br>
+d.	Save Images <br>
+e.	Predict function to do predictions. <br>
 
 
 # Keras / TensorFlow
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5'
-from keras.models import load_model
-from layers import BilinearUpSampling2D
-#from utils import predict, load_images, display_images
-from matplotlib import pyplot as plt
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5' <br>
+from keras.models import load_model <br>
+from layers import BilinearUpSampling2D <br>
+#from utils import predict, load_images, display_images <br>
+from matplotlib import pyplot as plt <br>
 
-# Custom object needed for inference and training
-custom_objects = {'BilinearUpSampling2D': BilinearUpSampling2D, 'depth_loss_function': None}
+# Custom object needed for inference and training <br>
+custom_objects = {'BilinearUpSampling2D': BilinearUpSampling2D, 'depth_loss_function': None} <br>
 
 print('Loading model...')
 
