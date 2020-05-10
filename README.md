@@ -59,7 +59,7 @@ b.	Standard Deviation: ['0.214562639594078', '0.213071450591087', '0.21385762095
 
 Dataset Components
 1.	Background Images:
-   <img src = "Dataset_Images/Background_Images.jpeg">
+   <img src = "Dataset_Images/Background_Images.jpg">
  
 2.	Foreground Images:
  
